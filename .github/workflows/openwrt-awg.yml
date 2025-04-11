@@ -14,9 +14,9 @@ jobs:
       matrix:
         tag: ['snapshot']
         build_env:
-          - pkgarch: aarch64_cortex-a53
-            target: mediatek
-            subtarget: filogic
+          - pkgarch: SNAPSHOT_r29172-eec11fbbb6
+            target: ramips
+            subtarget: mt7620
     steps:
       - uses: actions/checkout@v4
         with:
