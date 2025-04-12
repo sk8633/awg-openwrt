@@ -70,10 +70,10 @@ jobs:
 
       - name: Make apks amnezia_${{ github.ref_name }} for original OpenWRT_${{ matrix.tag }} ${{ matrix.build_env.target}}/${{ matrix.build_env.subtarget}}
         run: |
-          make -j $(nproc) package/amneziawg-tools/{clean,download,prepare,compile}
-          make -j $(nproc) package/amneziawg-go/{clean,download,prepare,compile}
-          make -j $(nproc) package/kmod-amneziawg/{clean,download,prepare,compile}
-          make -j $(nproc) package/luci-proto-amneziawg/{clean,download,prepare,compile}
+          make -j $(nproc) V=sc package/amneziawg-tools/{clean,download,prepare,compile}
+          #make -j $(nproc) V=sc package/amneziawg-go/{clean,download,prepare,compile}
+          make -j $(nproc) V=sc package/kmod-amneziawg/{clean,download,prepare,compile}
+          make -j $(nproc) V=sc package/luci-proto-amneziawg/{clean,download,prepare,compile}
 
       - name: Prepare artifacts OpenWRT_${{ matrix.tag }} ${{ matrix.build_env.target}}/${{ matrix.build_env.subtarget}}
         run: |
